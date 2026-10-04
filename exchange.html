@@ -1,0 +1,513 @@
+.<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TREX HITEQ | Exchange &amp; Used Devices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1F4F2;--surface:#fff;--ink:#0C2620;--muted:#55675F;--line:#D3DCD7;--brand:#0C2620;--brand-ink:#fff;--accent:#F2A900;--accent-ink:#1b1400;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1512;--surface:#12211C;--ink:#E9F0EC;--muted:#98ABA3;--line:#243630;--brand:#12211C;--brand-ink:#E9F0EC}}
+:root[data-theme="dark"]{--bg:#0A1512;--surface:#12211C;--ink:#E9F0EC;--muted:#98ABA3;--line:#243630;--brand:#12211C;--brand-ink:#E9F0EC}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--brand);color:var(--brand-ink);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:16px;height:60px}
+.logo{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.5px}
+.logo span{color:var(--accent)}
+.logo{white-space:nowrap}
+nav{display:flex;gap:18px;margin-left:auto;font-size:15px}
+nav a{position:relative;display:block;text-decoration:none;opacity:.85;transition:color .2s,opacity .2s,transform .2s}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+nav a:hover,nav a:focus-visible{color:var(--accent);opacity:1;transform:translateY(-2px) scale(1.04)}
+nav a:hover{animation:nav-react .42s ease}
+nav a:hover::after,nav a:focus-visible::after,nav a[aria-current="page"]::after{transform:scaleX(1)}
+nav a:active{animation:none;transform:scale(.94)}
+nav a[aria-current="page"]{color:var(--accent);font-weight:600;opacity:1}
+@keyframes nav-react{0%,100%{transform:translateY(-2px) scale(1.04)}40%{transform:translateY(-4px) scale(1.1)}70%{transform:translateY(0) scale(.98)}}
+.cartbtn{border:0;background:var(--accent);color:var(--accent-ink);font:600 14px inherit;font-family:inherit;padding:9px 14px;border-radius:8px;cursor:pointer}
+@media(max-width:640px){.bar{height:auto;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}nav{display:flex;order:3;width:100%;margin:0;overflow-x:auto;gap:16px;padding-bottom:3px;white-space:nowrap;font-size:13px}.cartbtn{margin-left:auto}}
+@media(max-width:420px){.logo{font-size:clamp(13px,3.8vw,16px);letter-spacing:-.45px}.bar{gap:8px}}
+.hero{background:var(--brand);color:var(--brand-ink);padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,68px);font-weight:800;letter-spacing:-1.5px}
+.hero p{max-width:46ch;opacity:.85;margin:18px 0 26px;font-size:18px}
+.btn{display:inline-block;border:0;border-radius:8px;padding:12px 20px;font:600 15px "Instrument Sans",sans-serif;cursor:pointer;text-decoration:none}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{border:1.5px solid currentColor;background:transparent;color:inherit;margin-left:8px}
+.desk{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:22px}
+.desk h3{font-size:20px;margin-bottom:12px}
+.desk ul{list-style:none;margin:0;padding:0}
+.desk li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid rgba(255,255,255,.14);font-size:15px}
+.desk li b{color:var(--accent);font-weight:600;white-space:nowrap}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}}
+section{padding:56px 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px;margin-bottom:24px}
+.head h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:7px 15px;font:500 14px "Instrument Sans",sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.pic{height:150px;display:grid;place-items:center;background:var(--bg)}
+
+.body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.body h3{font-size:18px}
+.tag{font-size:13px;color:var(--muted)}
+.price{font:800 20px "Bricolage Grotesque",sans-serif;margin-top:auto;padding-top:8px}
+.card .btn{width:100%;margin-top:8px;background:var(--ink);color:var(--bg);padding:10px}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.svc div{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:-1px -1px 0 0}
+.svc h3{font-size:18px;margin-bottom:6px}.svc p{margin:0 0 8px;color:var(--muted);font-size:15px}.svc b{font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.showcase{background:var(--brand);color:var(--brand-ink)}
+.showcase .head p{max-width:54ch;margin:10px 0 0;color:#c7d5ce}
+.showcase-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:stretch}
+.showcase video{display:block;width:100%;height:100%;min-height:300px;max-height:460px;object-fit:cover;background:#000;border:1px solid rgba(255,255,255,.16);border-radius:16px}
+.youtube-video{display:block;width:100%;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:#000}
+.device-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.device-tile{position:relative;min-height:140px;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:#18352c}
+.device-tile img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;opacity:.7}
+.device-tile span{position:absolute;inset:auto 0 0;padding:24px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-weight:600}
+.video-credit{font-size:12px;color:#b8c9c0;margin:12px 0 0}
+.video-credit a{color:#f2a900}
+.payment-options{display:grid;gap:6px}
+.payment-note{padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:13px;line-height:1.5;color:var(--muted)}
+.payment-note b{color:var(--ink)}
+.payment-qr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.payment-qr{padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font-size:12px;text-align:center}
+.payment-qr img{display:block;width:min(100%,140px);height:auto;aspect-ratio:1;margin:0 auto 6px}
+.email-action{background:var(--surface);border:1px solid var(--line);color:var(--ink);margin-left:8px}
+.accessories{overflow:hidden}
+.accessory-carousel{position:relative}
+.accessory-track{display:flex;transition:transform .6s cubic-bezier(.22,.7,.25,1);will-change:transform}
+.accessory-slide{flex:0 0 100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.accessory-slide .accessory-card{width:100%;max-width:440px;justify-self:center}
+.accessory-card{min-width:0;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 20px rgba(12,38,32,.06)}
+.accessory-card .pic{aspect-ratio:1.45;height:auto}
+.accessory-card .body{padding:16px}
+.accessory-card .btn{width:100%;margin-top:8px;background:var(--ink);color:var(--bg);padding:10px}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px}
+.carousel-controls button{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--ink);font-size:20px;cursor:pointer}
+.carousel-controls button:hover{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.carousel-status{min-width:64px;text-align:center;color:var(--muted);font-size:14px}
+.image-credit{margin:12px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+.image-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:640px){.accessory-slide{gap:12px}.accessory-card .body{padding:12px}.accessory-card .body h3{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.accessory-track{transition:none;will-change:auto}}
+@media(max-width:800px){.showcase-grid{grid-template-columns:1fr}.showcase video{min-height:220px}}
+@media(max-width:460px){.device-tile{min-height:112px}}
+form{display:grid;gap:12px}
+label{font-size:14px;font-weight:600;display:grid;gap:5px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+.note{font-size:14px;color:var(--muted)}
+footer{background:var(--brand);color:var(--brand-ink);padding:40px 0 28px}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+footer h3{font-size:17px;margin-bottom:8px}footer p{margin:4px 0;opacity:.85;font-size:15px}
+.copy{opacity:.6;font-size:13px;margin-top:28px;grid-column:1/-1}
+#drawer{position:fixed;inset:0 0 0 auto;width:min(400px,100%);background:var(--surface);z-index:40;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;border-left:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#drawer.open{transform:none}
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30;display:none}#scrim.open{display:block}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.dh h2{font-size:22px}
+.x{background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer;line-height:1}
+#items{flex:1;overflow:auto;padding:8px 20px}
+.it{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:28px;height:28px;border-radius:6px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font-size:16px}
+.df{padding:16px 20px;border-top:1px solid var(--line);display:grid;gap:10px;max-height:58vh;overflow-y:auto;flex-shrink:0}
+.tot{display:flex;justify-content:space-between;font:800 20px "Bricolage Grotesque",sans-serif}
+svg.ic{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.s{fill:var(--accent);stroke:none;opacity:.4;animation:glow 2.8s ease-in-out infinite}
+@keyframes glow{50%{opacity:.95}}
+@keyframes float{50%{transform:translateY(-9px) rotate(1.5deg)}}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes ping{80%,100%{transform:scale(2.6);opacity:0}}
+.pic svg{width:92px;height:92px;animation:float 4s ease-in-out infinite;color:var(--ink);transition:transform .3s}
+.card:hover .pic svg{transform:scale(1.12) rotate(-4deg);animation-play-state:paused}
+.card{transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.14)}
+.stage{display:flex;align-items:flex-end;justify-content:center;gap:10px;color:var(--brand-ink);min-height:260px}
+.stage-photo{width:auto;height:205px;max-width:34%;object-fit:contain;border-radius:12px;filter:drop-shadow(0 0 1px #F2A900) drop-shadow(0 0 2px rgba(242,169,0,.75)) drop-shadow(0 15px 22px rgba(0,0,0,.3));backface-visibility:hidden;animation:float 5s ease-in-out infinite}
+.stage-photo:nth-child(2){height:245px;animation-delay:-1.6s}.stage-photo:nth-child(3){height:215px;animation-delay:-3.2s}
+.rot{margin-top:14px;font-weight:600;color:var(--accent);min-height:1.6em}
+#rot{display:inline-block;transition:opacity .35s,transform .35s}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:14px;margin-bottom:16px}
+.live i{position:relative;width:9px;height:9px;border-radius:50%;background:#3DDC84}
+.live i::after{content:"";position:absolute;inset:0;border-radius:50%;background:#3DDC84;animation:ping 1.8s infinite}
+.mq{background:var(--accent);color:var(--accent-ink);overflow:hidden;white-space:nowrap;padding:11px 0;font:800 17px "Bricolage Grotesque",sans-serif}
+.mq div{display:inline-flex;gap:38px;animation:slide 28s linear infinite;padding-right:38px}
+.mq:hover div{animation-play-state:paused}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+.ex{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.ex div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.ex h3{font-size:20px;margin-bottom:6px}.ex p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.ex .btn{background:var(--ink);color:var(--bg);padding:10px 16px}
+.steps{list-style:decimal;padding-left:20px;margin:20px 0 0;color:var(--muted)}
+.tels a{display:block;font-weight:600;text-decoration:none;opacity:.9;margin:3px 0}
+header{background:rgba(7,24,19,.94);backdrop-filter:blur(14px);border-color:rgba(255,255,255,.1)}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:#071813;padding:76px 0 82px}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,20,15,.97) 0%,rgba(5,20,15,.87) 48%,rgba(5,20,15,.58) 100%),url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(90deg,transparent 10%,#000 100%)}
+.hero .wrap{position:relative}
+.hero h1{max-width:12ch;text-wrap:balance}
+.hero p{color:#d2e0d9}
+.stage{position:relative;min-height:310px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:radial-gradient(ellipse at 50% 100%,rgba(242,169,0,.18),transparent 58%),rgba(255,255,255,.035);box-shadow:inset 0 1px rgba(255,255,255,.1),0 24px 70px rgba(0,0,0,.2)}
+.stage:before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.08);border-radius:17px;pointer-events:none}
+.stage svg{filter:drop-shadow(0 15px 22px rgba(0,0,0,.3))}
+.live{padding:7px 12px;border:1px solid rgba(255,255,255,.17);border-radius:99px;background:rgba(255,255,255,.06)}
+.btn{transition:transform .2s,box-shadow .2s,background-color .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.btn.p:hover{background:#ffc12b}
+section{padding:72px 0}
+#shop{background:linear-gradient(180deg,var(--bg),color-mix(in srgb,var(--bg) 88%,var(--accent) 12%))}
+.head h2{letter-spacing:-1.2px}
+.grid{gap:22px}
+.card{border-radius:18px;box-shadow:0 5px 20px rgba(12,38,32,.06)}
+.shop-note{margin:18px 0 0}
+.pic{height:auto;aspect-ratio:1.35;background:linear-gradient(145deg,#f0f4f1,#e3ebe6);position:relative;overflow:hidden}
+.pic:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.28),transparent 48%,rgba(12,38,32,.04))}
+.product-img{width:100%;height:100%;display:block;object-fit:contain;padding:10px;transition:transform .45s}
+.product-img.cutout{object-fit:contain;padding:16px;background:linear-gradient(145deg,#f7f8f5,#e8efea)}
+.product-fallback{width:100%;height:100%;place-items:center;color:var(--ink)}
+.product-fallback:not([hidden]){display:grid}
+.product-fallback svg{width:92px;height:92px}
+.card:hover .product-img{transform:scale(1.045)}
+.body{padding:18px}
+.body h3{line-height:1.2}
+.tag{min-height:2.5em}
+.price{padding-top:12px}
+.card .btn{border-radius:10px}
+.chip{transition:background .2s,transform .2s,border-color .2s}
+.chip:hover{transform:translateY(-1px);border-color:var(--accent)}
+.page-banner{display:none;position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 10%,rgba(242,169,0,.22),transparent 34%),linear-gradient(125deg,#071813,#12382e 68%,#1a4b3c);color:#fff;padding:64px 0 70px}
+.page-banner::after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.14);border-radius:50%;right:9%;top:-130px;box-shadow:0 0 0 28px rgba(255,255,255,.035),0 0 0 56px rgba(255,255,255,.025);pointer-events:none}
+.page-banner .wrap{position:relative;z-index:1}
+.page-kicker{display:inline-block;margin-bottom:15px;color:#ffc63d;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.page-banner h1{max-width:850px;font-size:clamp(38px,7vw,72px);letter-spacing:-1.8px}
+.page-banner p{max-width:58ch;margin:18px 0 26px;color:#d2e1da;font-size:18px}
+.page-banner .btn.s{margin-left:8px}
+.page-banner .btn:not(.p){border:1px solid rgba(255,255,255,.46);color:#fff}
+body[data-page="home"] .page-banner{display:none}
+body[data-page="home"] #shop,body[data-page="home"] #accessories,body[data-page="home"] #repairs,body[data-page="home"] #exchange,body[data-page="home"] #book{display:none}
+body[data-page="shop"] .hero,body[data-page="shop"] .mq,body[data-page="shop"] #showcase,body[data-page="shop"] #accessories,body[data-page="shop"] #repairs,body[data-page="shop"] #exchange,body[data-page="shop"] #book{display:none}
+body[data-page="accessories"] .hero,body[data-page="accessories"] .mq,body[data-page="accessories"] #showcase,body[data-page="accessories"] #shop,body[data-page="accessories"] #repairs,body[data-page="accessories"] #exchange,body[data-page="accessories"] #book{display:none}
+body[data-page="repairs"] .hero,body[data-page="repairs"] .mq,body[data-page="repairs"] #showcase,body[data-page="repairs"] #shop,body[data-page="repairs"] #accessories,body[data-page="repairs"] #exchange{display:none}
+body[data-page="exchange"] .hero,body[data-page="exchange"] .mq,body[data-page="exchange"] #showcase,body[data-page="exchange"] #shop,body[data-page="exchange"] #accessories,body[data-page="exchange"] #repairs{display:none}
+body[data-page="home"] .banner-shop,body[data-page="home"] .banner-accessories,body[data-page="home"] .banner-repairs,body[data-page="home"] .banner-exchange{display:none}
+body[data-page="shop"] .banner-shop,body[data-page="accessories"] .banner-accessories,body[data-page="repairs"] .banner-repairs,body[data-page="exchange"] .banner-exchange{display:block}
+.alt{background:var(--surface)}
+.svc div,.ex div{transition:transform .2s,box-shadow .2s}
+.svc div:hover,.ex div:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(12,38,32,.09)}
+footer{background:linear-gradient(135deg,#071813,#0d3026)}
+@media(max-width:800px){.hero{padding:54px 0 62px}.stage{min-height:250px}.stage-photo{height:155px}.stage-photo:nth-child(2){height:185px}.stage-photo:nth-child(3){height:160px}}
+@media(max-width:640px){.hero{padding:46px 0 52px}.hero .btn.s{margin:10px 0 0}.page-banner{padding:48px 0 54px}.page-banner h1{letter-spacing:-1px}.page-banner p{font-size:16px}.grid{grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:13px}.pic{aspect-ratio:1.15}.body{padding:13px}.body h3{font-size:16px}.price{font-size:18px}section{padding:54px 0}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.mq div,.s,.stage-photo,.pic svg,.live i::after{animation:none!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}nav a:hover{animation:none}}
+</style>
+</head>
+<body data-page="exchange">
+<header><div class="wrap bar">
+<a class="logo" href="index.html">TREX<span>.</span> HITEQ<span>.</span> DIGITAL<span>.</span> SOLUTIONS</a>
+<nav aria-label="Main navigation"><a href="index.html" data-page-link="home">Home</a><a href="shop.html" data-page-link="shop">Shop</a><a href="accessories.html" data-page-link="accessories">Accessories</a><a href="repairs.html" data-page-link="repairs">Repairs</a><a href="exchange.html" data-page-link="exchange">Exchange used</a></nav>
+<button class="cartbtn" id="open">Cart (<span id="cnt">0</span>)</button>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="live"><i></i>Open in Aberdeen Old Market, Freetown</span>
+<h1>Buy it here. Fix it here. Swap it here.</h1>
+<p>TREX HITEQ sells, repairs and exchanges phones, laptops and electronic devices, all under one roof.</p>
+<a class="btn p" href="shop.html">Shop devices</a><a class="btn s" href="tel:+23231793895">Call +232 31793895</a>
+<div class="rot">We fix <span id="rot">phones</span></div>
+</div>
+<div class="stage" id="stage" aria-hidden="true"></div>
+</div></div>
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="page-banner banner-shop"><div class="wrap"><span class="page-kicker">The TREX HITEQ collection</span><h1>Find the right tech for your next move.</h1><p>Browse phones, laptops, tablets, gaming, audio and more. Every order is confirmed directly with our Freetown team.</p><a class="btn p" href="accessories.html">Explore accessories</a></div></section>
+<section class="page-banner banner-accessories"><div class="wrap"><span class="page-kicker">The finishing touches</span><h1>Small upgrades. Better everyday tech.</h1><p>Discover hand-picked chargers, power banks, cases and bags, with useful essentials for the devices you already own.</p><a class="btn p" href="shop.html?category=Accessories">Shop all accessories</a></div></section>
+<section class="page-banner banner-repairs"><div class="wrap"><span class="page-kicker">Repair with confidence</span><h1>Give your device a second life.</h1><p>From cracked screens and tired batteries to laptop upgrades and troubleshooting, talk to our team before work begins.</p><a class="btn p" href="#book" data-svc="Repair">Request a repair</a></div></section>
+<section class="page-banner banner-exchange"><div class="wrap"><span class="page-kicker">Upgrade the smart way</span><h1>Trade in. Swap up. Sell your old device.</h1><p>Bring a phone, laptop or tablet to TREX HITEQ. We’ll check its condition and help you find the right next step.</p><a class="btn p" href="#book" data-svc="Exchange / trade-in">Get an exchange quote</a></div></section>
+
+
+
+<section id="shop"><div class="wrap">
+<div class="head"><h2>Shop</h2><div class="chips" id="chips"></div></div>
+<div class="grid" id="grid"></div>
+<p class="note shop-note">Product photos are representative. Message us to confirm the exact model and condition in stock.</p>
+<p class="image-credit">New accessory photos: <a href="https://commons.wikimedia.org/wiki/File:Five_USB_cables_with_braided_jackets,_patterned_and_in_different_colours.jpg" target="_blank" rel="noopener noreferrer">USB cables</a> by Pittigrilli, <a href="https://commons.wikimedia.org/wiki/File:Wireless_Charging_Pad.jpg" target="_blank" rel="noopener noreferrer">wireless charger</a> by Seawhelan, and <a href="https://commons.wikimedia.org/wiki/File:2023_Mysz_komputerowa_Logitech_G903_Lightspeed.jpg" target="_blank" rel="noopener noreferrer">Logitech mouse</a> by Jacek Halicki, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Selfie_Stick_(15971758381).jpg" target="_blank" rel="noopener noreferrer">selfie stick</a> by Jonathan Chie, licensed <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.</p>
+</div></section>
+
+<section class="accessories alt" id="accessories"><div class="wrap">
+<div class="head"><div><h2>Accessories</h2><p class="note">Useful extras for your everyday devices.</p></div><a class="btn" href="shop.html?category=Accessories">Shop all accessories</a></div>
+<div class="accessory-carousel" id="accessory-carousel" role="region" aria-roledescription="carousel" aria-label="TREX HITEQ accessories">
+<div class="accessory-track" id="accessory-track" aria-live="polite"></div>
+</div>
+<div class="carousel-controls">
+<button type="button" id="accessory-prev" aria-label="Previous accessories">&larr;</button>
+<span class="carousel-status" id="accessory-status" aria-live="polite"></span>
+<button type="button" id="accessory-next" aria-label="Next accessories">&rarr;</button>
+</div>
+<p class="image-credit">Photos: <a href="https://commons.wikimedia.org/wiki/File:Five_USB_cables_with_braided_jackets,_patterned_and_in_different_colours.jpg" target="_blank" rel="noopener noreferrer">USB cables</a> by Pittigrilli, <a href="https://commons.wikimedia.org/wiki/File:Wireless_Charging_Pad.jpg" target="_blank" rel="noopener noreferrer">wireless charger</a> by Seawhelan, and <a href="https://commons.wikimedia.org/wiki/File:2023_Mysz_komputerowa_Logitech_G903_Lightspeed.jpg" target="_blank" rel="noopener noreferrer">Logitech mouse</a> by Jacek Halicki, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Selfie_Stick_(15971758381).jpg" target="_blank" rel="noopener noreferrer">selfie stick</a> by Jonathan Chie, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.</p>
+</div></section>
+
+<section id="repairs" class="alt"><div class="wrap">
+<div class="head"><h2>Repairs for every device</h2></div>
+<div class="svc">
+<div><h3>Phones</h3><p>Cracked screens, batteries, charging ports, cameras, speakers, software and unlocking. iPhone, Samsung, Tecno, Infinix, Itel, Huawei and more.</p></div>
+<div><h3>Laptops</h3><p>Screens, keyboards, hinges, fans, SSD and RAM upgrades, Windows install, virus removal and data recovery.</p></div>
+<div><h3>Other electronics</h3><p>Tablets, smart TVs, game consoles, speakers, power banks and chargers. Bring it in and we will tell you what it needs.</p><b>Quote before we start</b></div>
+</div>
+</div></section>
+
+<section id="exchange"><div class="wrap">
+<div class="head"><h2>Exchange and trade-in</h2></div>
+<div class="ex">
+<div><h3>Trade in for credit</h3><p>Bring your old phone, laptop or tablet. We value it and take that amount off your next purchase.</p><a class="btn" href="#book" data-svc="Exchange / trade-in">Get a trade-in quote</a></div>
+<div><h3>Swap and upgrade</h3><p>Want a newer model? Swap your current device and pay only the difference.</p><a class="btn" href="#book" data-svc="Exchange / trade-in">Ask about a swap</a></div>
+<div><h3>Sell for cash</h3><p>Not buying anything? We buy working devices and some faulty ones, priced on condition.</p><a class="btn" href="#book" data-svc="Sell my device">Sell my device</a></div>
+</div>
+<ol class="steps"><li>Send photos on WhatsApp or walk in with the device.</li><li>We test it and give you a price.</li><li>You accept, and we pay you or deduct it from your new device.</li></ol>
+</div></section>
+
+<section id="book"><div class="wrap two">
+<div>
+<h2 style="font-size:clamp(28px,4vw,40px);letter-spacing:-.8px;margin-bottom:12px">Book a repair or exchange</h2>
+<p style="color:var(--muted);max-width:42ch">Tell us what is wrong and we will confirm a price and a drop-off time on WhatsApp. You can also walk in any day we are open.</p>
+</div>
+<form id="rf">
+<label>What do you need?<select name="v" id="svc"><option>Repair</option><option>Exchange / trade-in</option><option>Sell my device</option></select></label>
+<label>Your name<input name="n" required autocomplete="name"></label>
+<label>Phone number<input name="p" required inputmode="tel" autocomplete="tel"></label>
+<label>Device<select name="d"><option>Phone</option><option>Laptop</option><option>Tablet</option><option>TV or console</option><option>Other</option></select></label>
+<label>Brand and model<input name="m" placeholder="e.g. Samsung A14, HP 250 G8"></label>
+<label>Problem or what you want in exchange<textarea name="i" rows="3" required></textarea></label>
+<button class="btn p" type="submit">Send request on WhatsApp</button>
+<button class="btn email-action" id="email-request" type="button">Send request by email</button>
+</form>
+</div></section>
+</main>
+
+<footer id="visit"><div class="wrap">
+<div><h3>TREX HITEQ</h3><p>1C Aberdeen Road, Old Market</p><p>Freetown, Sierra Leone</p></div>
+<div><h3>Contact</h3><div class="tels"><a href="tel:+23231793895">+232 31793895</a><a href="tel:+23275359281">+232 75359281</a><a href="tel:+23277808841">+232 77808841</a></div><p>Email: <a href="mailto:inforie@icloud.com">inforie@icloud.com</a><br><a href="mailto:michealwisdomsr@gmail.com">michealwisdomsr@gmail.com</a></p></div>
+<div><h3>We sell and repair</h3><p>Phones, laptops, tablets, TVs, consoles, audio, watches and accessories. Exchanges and trade-ins welcome.</p></div>
+<p class="copy">&copy; 2026 TREX HITEQ. Prices in Sierra Leonean Leones (Le).</p>
+</div></footer>
+
+<div id="scrim"></div>
+<aside id="drawer" aria-label="Shopping cart">
+<div class="dh"><h2>Your cart</h2><button class="x" id="close" aria-label="Close cart">&times;</button></div>
+<div id="items"></div>
+<div class="df">
+<div class="tot"><span>Total</span><span id="total">Le 0</span></div>
+<input id="cn" placeholder="Your name" autocomplete="name" aria-label="Your name">
+<input id="cp" placeholder="Phone number" inputmode="tel" autocomplete="tel" aria-label="Phone number">
+<select id="cm" aria-label="Delivery method"><option>Pick up at the shop</option><option>Delivery in Freetown</option></select>
+<label class="payment-options">Payment method
+<select id="payment" aria-label="Payment method">
+<option value="Cash on pickup or delivery">Cash on pickup or delivery</option>
+<option value="Debit or credit card (secure payment link)">Debit or credit card (secure payment link)</option>
+<option value="Orange Money">Orange Money</option>
+<option value="Afrimoney">Afrimoney</option>
+</select></label>
+<div class="payment-note"><b>Mobile money payment details</b><div class="payment-qr-grid">
+<div class="payment-qr"><img src="orange-money-payment-qr.png" alt="QR code showing Orange Money payment number +232 75359281" width="240" height="240" loading="lazy">Orange Money<br><a href="tel:+23275359281">+232 75359281</a></div>
+<div class="payment-qr"><img src="afrimoney-payment-qr.png" alt="QR code showing Afrimoney payment number +232 77808841" width="240" height="240" loading="lazy">Afrimoney (Africell)<br><a href="tel:+23277808841">+232 77808841</a></div>
+</div>Scan to view payment details; this does not send or confirm payment. Pay in your wallet app and confirm with TREX HITEQ.<br><b>Debit / credit card:</b> request a secure payment link on WhatsApp. Never enter card details on this page.</div>
+<button class="btn p" id="order">Place order on WhatsApp</button>
+<button class="btn email-action" id="email-order" type="button">Send order by email</button>
+<span class="note">Confirm the total and payment details with TREX HITEQ before sending money.</span>
+</div>
+</aside>
+
+<script>
+var WA="23231793895";
+var P=[
+["Phones","iPhone 15 Pro, 256GB","New, sealed, 1 year warranty",18500,"phone2"],
+["Phones","iPhone 14, 128GB","Used, grade A, 90%+ battery",11500,"phone2"],
+["Phones","iPhone 13, 128GB","Used, grade A, 90%+ battery",9500,"phone2"],
+["Phones","iPhone 11, 64GB","Used, tested, good battery",5200,"phone2"],
+["Phones","Samsung Galaxy S23 Ultra","Used, 256GB, with S Pen",14500,"phone"],
+["Phones","Samsung Galaxy A15","New, 128GB, 4GB RAM",3800,"phone"],
+["Phones","Tecno Camon 30","New, 256GB, 50MP camera",4200,"phone"],
+["Phones","Tecno Spark 20","New, 256GB, 8GB RAM",2600,"phone"],
+["Phones","Infinix Hot 40i","New, 128GB, big battery",2300,"phone"],
+["Phones","Xiaomi Redmi Note 13","New, 128GB, AMOLED screen",3600,"phone"],
+["Phones","Itel A70","New, 128GB, budget pick",1500,"phone"],
+["Laptops","MacBook Air M1","Used, 8GB, 256GB, 13 inch",17500,"laptop"],
+["Laptops","HP 15 Core i5","8GB RAM, 256GB SSD, Windows 11",11000,"laptop"],
+["Laptops","Dell Latitude 7490","Refurbished, i5, 8GB, 256GB SSD",8500,"laptop"],
+["Laptops","Lenovo ThinkPad T480","Refurbished, i5, 16GB, 512GB SSD",9200,"laptop"],
+["Laptops","Asus VivoBook 15","New, Ryzen 5, 8GB, 512GB SSD",12500,"laptop"],
+["Tablets","iPad 9th gen, 64GB","Used, Wi-Fi, 10.2 inch",8900,"tablet"],
+["Tablets","Samsung Galaxy Tab A9","New, 64GB, Wi-Fi",3900,"tablet"],
+["Tablets","Lenovo Tab M10","New, 64GB, kids mode",3200,"tablet"],
+["TV and Gaming","PlayStation 5 Slim","New, disc edition, 1 controller",16500,"console"],
+["TV and Gaming","PlayStation 4, 500GB","Used, tested, 1 controller",6500,"console"],
+["TV and Gaming","Xbox Series S","New, 512GB",11000,"console"],
+["TV and Gaming","Smart TV 43 inch","Full HD, Wi-Fi, apps built in",8200,"tv"],
+["TV and Gaming","Smart TV 32 inch","HD, Wi-Fi, 1 year warranty",4500,"tv"],
+["Audio and Watches","AirPods Pro (2nd gen)","Active noise cancelling",5200,"buds"],
+["Audio and Watches","Wireless earbuds","Bluetooth 5.3, charging case",450,"buds"],
+["Audio and Watches","Bluetooth speaker","Waterproof, 12 hour battery",1800,"speaker"],
+["Audio and Watches","Smartwatch","Heart rate, calls, 7 day battery",900,"watch"],
+["Accessories","Fast charger 20W","USB-C, with cable",250,"charger"],
+["Accessories","Power bank 20,000mAh","Dual USB, fast charge",650,"bank"],
+["Accessories","Phone case and screen guard","Tell us your model on WhatsApp",120,"phone"],
+["Accessories","Laptop bag 15.6 inch","Padded, water resistant",400,"bag"],
+["Accessories","Braided USB cable","Durable braided design, colour may vary",180,"charger"],
+["Accessories","Wireless charging pad","Compact wireless charging accessory",600,"charger"],
+["Accessories","Logitech G903 wireless mouse","Wireless gaming mouse",2800,"mouse"],
+["Accessories","Extendable selfie stick","Portable extendable phone accessory",350,"stick"]
+];
+var ICON={
+phone:'<rect x="28" y="8" width="40" height="80" rx="8"/><rect class="s" x="33" y="16" width="30" height="58" rx="3"/><circle cx="48" cy="81" r="2.5"/>',
+phone2:'<rect x="28" y="8" width="40" height="80" rx="10"/><rect class="s" x="32" y="13" width="32" height="66" rx="5"/><rect x="42" y="16" width="12" height="4" rx="2"/><path d="M42 84h12"/>',
+laptop:'<rect x="18" y="22" width="60" height="40" rx="3"/><rect class="s" x="22" y="26" width="52" height="32" rx="1"/><path d="M8 70h80l-5-8H13z"/>',
+tablet:'<rect x="20" y="14" width="56" height="68" rx="7"/><rect class="s" x="25" y="20" width="46" height="54" rx="2"/><circle cx="48" cy="78" r="2"/>',
+tv:'<rect x="10" y="20" width="76" height="46" rx="4"/><rect class="s" x="14" y="24" width="68" height="38" rx="1"/><path d="M34 80h28M48 66v14"/>',
+console:'<path d="M28 34h40c10 0 18 12 20 28 1 8-6 12-12 6l-8-10H28l-8 10c-6 6-13 2-12-6 2-16 10-28 20-28z"/><path d="M30 44v10M25 49h10"/><circle cx="62" cy="44" r="2.5"/><circle cx="69" cy="51" r="2.5"/><circle class="s" cx="48" cy="46" r="5"/>',
+buds:'<rect x="22" y="48" width="52" height="32" rx="14"/><path d="M22 62h52"/><path d="M34 48V26a5 5 0 0 1 10 0v22M52 48V26a5 5 0 0 1 10 0v22"/><circle class="s" cx="48" cy="71" r="3"/>',
+watch:'<rect x="28" y="26" width="40" height="44" rx="11"/><rect class="s" x="33" y="31" width="30" height="34" rx="6"/><path d="M35 26l3-14h20l3 14M35 70l3 14h20l3-14"/>',
+bank:'<rect x="28" y="10" width="40" height="76" rx="8"/><rect class="s" x="36" y="20" width="24" height="9" rx="2"/><path d="M38 44h20M38 54h20M38 64h12"/>',
+charger:'<rect x="30" y="14" width="36" height="36" rx="6"/><path d="M40 14V6M56 14V6"/><path class="s" d="M52 24l-8 12h7l-3 10 9-13h-7z"/><path d="M48 50v20a10 10 0 0 0 10 10h14"/>',
+speaker:'<rect x="26" y="10" width="44" height="76" rx="12"/><circle class="s" cx="48" cy="30" r="8"/><circle cx="48" cy="62" r="15"/><circle cx="48" cy="62" r="5"/>',
+bag:'<rect x="18" y="32" width="60" height="46" rx="7"/><path d="M38 32v-8h20v8M18 52h60"/><rect class="s" x="42" y="48" width="12" height="8" rx="2"/>',
+mouse:'<path d="M48 10c-15 0-24 10-24 25v26c0 15 9 25 24 25s24-10 24-25V35C72 20 63 10 48 10z"/><path d="M48 11v24m-24 0h48"/>',
+stick:'<rect x="37" y="8" width="22" height="38" rx="4"/><path d="M48 46v34m-12 8h24m-12-8v8m-8-54h16"/>'
+};
+function svg(k){return '<svg class="ic" viewBox="0 0 96 96" aria-hidden="true">'+ICON[k]+'</svg>'}
+var PRODUCT_IMAGES=[
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Apple_iPhone_15_Pro.jpg/960px-Apple_iPhone_15_Pro.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/IPhone_14_Product_Red.jpg/960px-IPhone_14_Product_Red.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/IPhone_13_vector.svg/960px-IPhone_13_vector.svg.png",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/IPhone_11_all_color.jpg/960px-IPhone_11_all_color.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Samsung_Galaxy_S23_Ultra%2C_512_GB%2C_Lavender_20230416_HOF00318_RAW-Export_cens.png/960px-Samsung_Galaxy_S23_Ultra%2C_512_GB%2C_Lavender_20230416_HOF00318_RAW-Export_cens.png",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Samsung_Galaxy_A15_5G_2024.jpg/960px-Samsung_Galaxy_A15_5G_2024.jpg",
+"https://fdn2.gsmarena.com/vv/bigpic/tecno-camon-30.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Tecno_Spark_20.jpg/960px-Tecno_Spark_20.jpg",
+"https://fdn2.gsmarena.com/vv/bigpic/infinix-hot-40i.jpg",
+"https://i02.appmifile.com/994_operatorx_operatorx_opx/11/01/2024/72a71b312950178179eeb71425ef8def.png",
+"https://fdn2.gsmarena.com/vv/bigpic/itel-a70.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/MacBook_Air_M1.png/960px-MacBook_Air_M1.png",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/HP_Laptop_15-da1xxx.jpg/960px-HP_Laptop_15-da1xxx.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Dell_Latitude_7490_running_Ubuntu_Cinnamon_23.10.jpg/960px-Dell_Latitude_7490_running_Ubuntu_Cinnamon_23.10.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Lenovo_csa01.jpg/960px-Lenovo_csa01.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Asus_Vivobook_15.jpg/960px-Asus_Vivobook_15.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/IPad_10.2%E2%80%91inch.png/960px-IPad_10.2%E2%80%91inch.png",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/20251110_181425_Samsung_Galaxy_Tab_A9_Front.jpg/960px-20251110_181425_Samsung_Galaxy_Tab_A9_Front.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Lenovo_Tab_M10_FHD_Plus_%282026%29.jpg/960px-Lenovo_Tab_M10_FHD_Plus_%282026%29.jpg",
+"https://gmedia.playstation.com/is/image/SIEPDC/ps5-slim-edition-left-image-block-01-en-24jun24?$1200px--t$",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/The_PlayStation_4._%289021900367%29.jpg/960px-The_PlayStation_4._%289021900367%29.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Xbox_Series_S_with_controller.jpg/960px-Xbox_Series_S_with_controller.jpg",
+"https://www.lg.com/content/dam/channel/wcms/uk/images/tvs/43LM6300PLA_AEK_EEUK_UK_C/TV-FHD-43-LM63-A-Basic.jpg",
+"https://www.lg.com/content/dam/channel/wcms/uk/images/tvs/32LM637BPLA_AEK_EEUK_UK_C/32LM637BPLA_AEK_EEUK_UK_C-450x450.jpg",
+"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=1200&hei=630&fmt=jpeg&qlt=90&.v=1660803972361",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Technics-EAH-AZ60M2_06.jpg/960px-Technics-EAH-AZ60M2_06.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/JBL_GO2_Bluetooth_speaker%2C_waterproof%2C_size_of_cigarette_pack%2C_comparison_with_credit_card_of_front_side.jpg/960px-JBL_GO2_Bluetooth_speaker%2C_waterproof%2C_size_of_cigarette_pack%2C_comparison_with_credit_card_of_front_side.jpg",
+"https://i02.appmifile.com/133_operatorx_operatorx_opx/25/06/2023/af1cc31c5b732c0ce504f440373772e2.png",
+"https://upload.wikimedia.org/wikipedia/commons/d/d3/Lazos_GaN_Charger_30W_L-AC-G30.jpg",
+"https://upload.wikimedia.org/wikipedia/commons/c/cf/Mi50WPowerBank20000mAhXiaomi20240823000.jpg",
+"https://upload.wikimedia.org/wikipedia/commons/1/12/Samsung_Galaxy_S8_Active_With_Casing.jpg",
+"https://upload.wikimedia.org/wikipedia/commons/3/36/BAPLA_2009_laptop_bag.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Five_USB_cables_with_braided_jackets%2C_patterned_and_in_different_colours.jpg/960px-Five_USB_cables_with_braided_jackets%2C_patterned_and_in_different_colours.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Wireless_Charging_Pad.jpg/960px-Wireless_Charging_Pad.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/2023_Mysz_komputerowa_Logitech_G903_Lightspeed.jpg/960px-2023_Mysz_komputerowa_Logitech_G903_Lightspeed.jpg",
+"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Selfie_Stick_%2815971758381%29.jpg/960px-Selfie_Stick_%2815971758381%29.jpg"
+];
+var cart=JSON.parse(localStorage.getItem("trex-hiteq-cart")||"{}"),requestedCategory=new URLSearchParams(location.search).get("category"),cat=requestedCategory||(document.body.dataset.page==="accessories"?"Accessories":"All");
+function fmt(n){return "Le "+n.toLocaleString("en-US")}
+function productImage(p,i){return PRODUCT_IMAGES[i]}
+function chips(){var c=["All","Phones","Laptops","Tablets","TV and Gaming","Audio and Watches","Accessories"],h="";
+c.forEach(function(x){h+='<button class="chip" aria-pressed="'+(x===cat)+'" data-c="'+x+'">'+x+'</button>'});
+document.getElementById("chips").innerHTML=h}
+function grid(){var h="";
+P.forEach(function(p,i){if(cat!=="All"&&p[0]!==cat)return;
+h+='<article class="card"><div class="pic"><img class="product-img" src="'+productImage(p,i)+'" alt="'+p[1]+'" loading="lazy" decoding="async"><span class="product-fallback" hidden>'+svg(p[4])+'</span></div><div class="body"><h3>'+p[1]+'</h3><span class="tag">'+p[2]+'</span><span class="price">'+fmt(p[3])+'</span><button class="btn" data-a="'+i+'">Add to cart</button></div></article>'});
+document.getElementById("grid").innerHTML=h;
+document.querySelectorAll(".product-img").forEach(function(img){img.onerror=function(){img.hidden=true;img.nextElementSibling.hidden=false}});
+}
+function initAccessoryCarousel(){
+var accessoryItems=P.map(function(p,i){return {product:p,index:i}}).filter(function(item){return item.product[0]==="Accessories"});
+var track=document.getElementById("accessory-track"),status=document.getElementById("accessory-status"),carousel=document.getElementById("accessory-carousel"),page=0;
+var pages=[];
+for(var i=0;i<accessoryItems.length;i+=2)pages.push(accessoryItems.slice(i,i+2));
+track.innerHTML=pages.map(function(items,pageIndex){
+return '<div class="accessory-slide" role="group" aria-roledescription="slide" aria-label="'+(pageIndex+1)+' of '+pages.length+'">'+items.map(function(item){
+var p=item.product,index=item.index;
+return '<article class="accessory-card"><div class="pic"><img class="product-img" src="'+productImage(p,index)+'" alt="'+p[1]+'" loading="lazy" decoding="async"><span class="product-fallback" hidden>'+svg(p[4])+'</span></div><div class="body"><h3>'+p[1]+'</h3><span class="tag">'+p[2]+'</span><span class="price">'+fmt(p[3])+'</span><button class="btn" data-a="'+index+'">Add to cart</button></div></article>';
+}).join("")+'</div>';
+}).join("");
+function show(nextPage){page=(nextPage+pages.length)%pages.length;track.style.transform="translateX(-"+(page*100)+"%)";status.textContent=(page+1)+" / "+pages.length;track.querySelectorAll(".accessory-slide").forEach(function(slide,i){slide.setAttribute("aria-hidden",i===page?"false":"true")})}
+document.getElementById("accessory-prev").onclick=function(){show(page-1)};
+document.getElementById("accessory-next").onclick=function(){show(page+1)};
+show(0);
+var reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+if(!reduced.matches){var timer=setInterval(function(){if(!carousel.matches(":hover")&&!carousel.contains(document.activeElement))show(page+1)},4500);
+reduced.addEventListener("change",function(e){if(e.matches)clearInterval(timer)})}
+}
+function render(){var h="",t=0,n=0;
+Object.keys(cart).forEach(function(i){var q=cart[i],p=P[i];t+=q*p[3];n+=q;
+h+='<div class="it"><b>'+p[1]+'</b><span>'+fmt(q*p[3])+'</span><div class="qty"><button data-m="'+i+'" aria-label="Remove one">&minus;</button>'+q+'<button data-p="'+i+'" aria-label="Add one">+</button></div></div>'});
+document.getElementById("items").innerHTML=h||'<p class="note" style="padding-top:16px">Your cart is empty. Add a device or accessory from the shop.</p>';
+document.getElementById("total").textContent=fmt(t);document.getElementById("cnt").textContent=n;localStorage.setItem("trex-hiteq-cart",JSON.stringify(cart))}
+function drawer(o){document.getElementById("drawer").classList.toggle("open",o);document.getElementById("scrim").classList.toggle("open",o)}
+document.addEventListener("click",function(e){var t=e.target;
+if(t.dataset.c){cat=t.dataset.c;chips();grid()}
+if(t.dataset.a){cart[t.dataset.a]=(cart[t.dataset.a]||0)+1;render();drawer(true)}
+if(t.dataset.p){cart[t.dataset.p]++;render()}
+if(t.dataset.m){if(--cart[t.dataset.m]<=0)delete cart[t.dataset.m];render()}});
+document.getElementById("open").onclick=function(){drawer(true)};
+document.getElementById("close").onclick=function(){drawer(false)};
+document.getElementById("scrim").onclick=function(){drawer(false)};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")drawer(false)});
+function wa(msg){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank")}
+function email(msg,subject){window.location.href="mailto:inforie@icloud.com,michealwisdomsr@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(msg)}
+function orderMessage(){
+var k=Object.keys(cart);if(!k.length){alert("Add at least one item to your cart first.");return null}
+var n=document.getElementById("cn").value.trim(),p=document.getElementById("cp").value.trim();
+if(!n||!p){alert("Enter your name and phone number so we can confirm your order.");return null}
+var m="New order for TREX HITEQ\n",t=0;
+k.forEach(function(i){m+=cart[i]+" x "+P[i][1]+" - "+fmt(cart[i]*P[i][3])+"\n";t+=cart[i]*P[i][3]});
+m+="Total: "+fmt(t)+"\n"+document.getElementById("cm").value+"\nPayment method: "+document.getElementById("payment").value;
+if(document.getElementById("payment").value==="Orange Money")m+="\nOrange Money: +232 75359281";
+if(document.getElementById("payment").value==="Afrimoney")m+="\nAfrimoney: +232 77808841";
+if(document.getElementById("payment").value==="Debit or credit card (secure payment link)")m+="\nPlease send a secure debit/credit card payment link.";
+return m+"\nName: "+n+"\nPhone: "+p
+}
+document.getElementById("order").onclick=function(){
+var m=orderMessage();if(m)wa(m)};
+document.getElementById("email-order").onclick=function(){var m=orderMessage();if(m)email(m,"TREX HITEQ order request")};
+document.getElementById("rf").onsubmit=function(e){e.preventDefault();var f=e.target;
+wa(f.v.value+" request\nName: "+f.n.value+"\nPhone: "+f.p.value+"\nDevice: "+f.d.value+" "+f.m.value+"\nDetails: "+f.i.value)};
+document.getElementById("email-request").onclick=function(){var f=document.getElementById("rf");if(!f.reportValidity())return;
+email(f.v.value+" request\nName: "+f.n.value+"\nPhone: "+f.p.value+"\nDevice: "+f.d.value+" "+f.m.value+"\nDetails: "+f.i.value,"TREX HITEQ "+f.v.value+" request")};
+function reveal(){if(!("IntersectionObserver" in window))return;
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.08});
+document.querySelectorAll(".card,.ex div,.svc div,.head").forEach(function(el){if(!el.classList.contains("rv")){el.classList.add("rv");io.observe(el)}})}
+var _g=grid;grid=function(){_g();reveal()};
+document.getElementById("stage").innerHTML='<img class="stage-photo" src="'+PRODUCT_IMAGES[0]+'" alt="iPhone 15 Pro" loading="eager"><img class="stage-photo" src="'+PRODUCT_IMAGES[11]+'" alt="MacBook Air M1" loading="eager"><img class="stage-photo" src="'+PRODUCT_IMAGES[16]+'" alt="iPad 9th generation" loading="eager">';
+var T=["Phones","Laptops","Tablets","TVs","Game consoles","Smartwatches","Speakers","Chargers and more"],ti=0,r=document.getElementById("rot");
+setInterval(function(){r.style.opacity=0;r.style.transform="translateY(8px)";setTimeout(function(){ti=(ti+1)%T.length;r.textContent=T[ti];r.style.opacity=1;r.style.transform="none"},350)},2200);
+var B=["iPhone","Samsung","Tecno","Infinix","Itel","Xiaomi","Huawei","HP","Dell","Lenovo","Apple MacBook","Asus","iPad","PlayStation","Xbox","Smart TVs","JBL","Chargers"],m="";
+for(var q=0;q<2;q++)B.forEach(function(x){m+="<span>"+x+"</span>"});
+document.getElementById("mq").innerHTML=m;
+document.querySelectorAll("[data-svc]").forEach(function(a){a.addEventListener("click",function(){document.getElementById("svc").value=a.dataset.svc})});
+document.querySelectorAll("[data-page-link]").forEach(function(a){if(a.dataset.pageLink===document.body.dataset.page)a.setAttribute("aria-current","page")});
+if(document.body.dataset.page==="repairs")document.querySelector("#book h2").textContent="Book a device repair";
+if(document.body.dataset.page==="exchange"){document.querySelector("#book h2").textContent="Tell us what you want to exchange";document.getElementById("svc").value="Exchange / trade-in"}
+chips();grid();initAccessoryCarousel();render();
+</script>
+</body>
+</html>
